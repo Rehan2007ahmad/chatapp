@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    body {
+      height: 100vh;
+      background-image: linear-gradient(rgb(189, 189, 189), rgb(86, 71, 113));
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .navbar {
+      background-color: #f8f9fa; 
+      box-shadow: 0 4px 2px -2px gray; 
+    }
+  
+    .navbar-brand {
+      color: #495057; 
+    }
+  
+    .custom-container {
+      max-width: 955px;
+      background-color: #ffffff;
+      margin: auto;
+      height: 60vh;
+      border-radius: 10px; 
+      overflow-y: scroll;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+      margin-top: 5px;
+      margin-bottom: 5px; 
+      padding: 10px;
+    }
+  
+    .message {
+      background-color: #f1f1f1; 
+      padding: 10px;
+      border: 2px solid #dcdcdc; 
+      border-radius: 10px;
+      margin-bottom: 10px;
+      max-width: 70%; 
+    }
+  
+    .right {
+      float: right;
+      clear: both; 
+    }
+  
+    .left {
+      float: left;
+      clear: both; 
+    }
+  
+    #send-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10px 0;
+    }
+  
+    #messageInp {
+      flex: 1;
+      padding: 10px;
+      border: 2px solid #4CAF50; 
+      border-radius: 5px; 
+      outline: none;
+    }
+  
+    #messageInp:focus {
+      border-color: #45a049; 
+    }
+  </style>
+  
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container-fluid d-flex justify-content-center">
+    <a class="navbar-brand" href="#">
+      <img src="/images/logo.jpg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+      Chat
+    </a>
+  </div>
+</nav>
+<br><br>
+<div class="container custom-container mt-5" id="messageContainer">
+</div>
+
+<div class="container">
+  <form action="" id="send-container">
+    <input type="text" name="messageInp" id="messageInp" class="form-control mr-2" placeholder="Type your message..." required>
+    <button class="btn btn-success" type="submit">Send</button>
+  </form>
+</div>
+
+<audio id="messageSound" src="images/ring.mp3"></audio>
+
+
+<script defer src="script.js">
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-Vs4LXB3wofWb2YYPez2c6O6gFtpM8Ud+aE1LkYxBqNImeTL+x6ZxFM1uZhyRc6dy" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
