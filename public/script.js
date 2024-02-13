@@ -1,4 +1,6 @@
-const socket = io('http://localhost:3000');
+// Determine the connection URL based on the environment
+const socket = io(window.location.origin); // Use the origin of the current page
+
 const messageContainer = document.getElementById('messageContainer');
 const form = document.getElementById('send-container');
 const messageInput = document.getElementById('messageInp');
